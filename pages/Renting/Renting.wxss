@@ -1,0 +1,154 @@
+/* pages/Renting/Renting.wxss */
+@import "./iconfont.wxss";
+.lfloat{
+  float: left;
+}
+.rfloat{
+  float: right;
+}
+.clear{
+  clear: both;
+}
+view.search {
+  display: flex;
+  flex-direction: row;
+  height: 68rpx;
+  background: #fff;
+  align-items: center;
+}
+
+view.searchItem {
+  display: flex;
+  height: 60rpx;
+  width: 80%;
+  background: #efeff4;
+  flex-direction: row;
+  border-radius: 30rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}
+
+view.searchItem image {
+  height: 42rpx;
+  width: 42rpx;
+  align-self: center;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+}
+
+view.searchItem input {
+  line-height: 42px;
+  flex: 0.7;
+  font-size: 12px;
+}
+
+view.search button {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  border: 0px;
+  background: #fff;
+}
+view.search button::after{
+  border: none;
+}
+
+.screen{
+  left: 0;
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+.screen>.screen-name,.price-name{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 100rpx;
+}
+.screen>.screen-name>.iconfont{
+  font-size: 12rpx;
+  margin-left: 8rpx;
+}
+.screen-color>text{
+  color: #F46458;
+}
+.screen>.price-name>.iconfont{
+  font-size: 12rpx;
+  margin-left: 8rpx;
+}
+.price-color>text{
+  color: #F46458;
+}
+
+.drop-down-background{
+  position: fixed;
+  top: 188rpx;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 221;
+  background: rgba(0, 0, 0, 0.5);
+}
+.drop-down-flex{
+  position: fixed;
+  /* top: 188rpx; */
+  background: #FFF;
+  left: 0;
+  width: 100%;
+  z-index: 222;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.msg{
+  position: relative;
+  border-bottom: 1px solid rgb(157, 177, 204);
+}
+
+.msg::after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.msg image{
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+}
+
+.msg button{
+  margin: 36px 10px;
+  width: 60px;
+  height: 30px;
+  color: white;
+  background: rgb(0, 208, 247);
+  font-size: 10px;
+  line-height: 30px;
+  padding: 0 8px;
+}
+
+.msg text{
+  margin-right: 5px;
+}
+
+.msg .top,.middle,.bottom{
+  margin-top: 10px;
+}
+
+.msg .middle text{
+  padding: 3px;
+  font-size: 10px;
+  color: rgb(0, 125, 180);
+  background: rgb(0, 208, 247);
+  border-radius: 3px;
+  border: 1px solid rgb(0, 125, 180);
+}
+

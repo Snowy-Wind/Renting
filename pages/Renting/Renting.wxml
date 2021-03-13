@@ -1,0 +1,61 @@
+<!--pages/Renting/Renting.wxml-->
+<view>
+  <view class='search'>
+    <view class='searchItem'>
+      <image src='../img/search.png' />
+      <input placeholder='搜索房子'></input>
+    </view>
+    <button class="rfloat">搜索</button>
+  </view>
+
+  <view class="drop">
+    <view class='screen'>
+      <view class='screen-name {{screenColor?"screen-color":""}}' bindtap='screenShow'>
+        <text>{{screen}}</text>
+        <text class='iconfont icon-sanjiaoxing {{screenFlag?"icon-sanjiaoxing1":""}}'></text>
+      </view>
+      <view class='price-name {{priceColor?"price-color":""}}' bindtap='priceShow'>
+        <text>{{price}}</text>
+        <text class='iconfont icon-sanjiaoxing {{priceFlag?"icon-sanjiaoxing1":""}}'></text>
+      </view>
+    </view>
+
+    <view class='drop-down-background' hidden='{{!screenFlag}}' bindtouchstart='handletouchtart'></view>
+    <view class='drop-down-flex' hidden='{{!screenFlag}}'>
+      <view wx:for="{{screenDown.screenDown}}" wx:key="this" class='drop-down {{screenDown.screen==index?"down-active":""}} {{screenFlag?"down-show":""}}' data-item='{{item}}' data-index='{{index}}' bindtap='screenChoice'>
+        <text>{{item}}</text>
+        <text class='iconfont icon-dagou rfloat' wx:if='{{screenDown.screen==index?true:false}}'></text>
+      </view>
+    </view>
+
+    <view class='drop-down-background' hidden='{{!priceFlag}}' bindtouchstart='handletouchtart'></view>
+    <view class='drop-down-flex' hidden='{{!priceFlag}}'>
+      <view wx:for="{{priceDown.priceDown}}" wx:key="this" class='drop-down {{priceDown.price==index?"down-active":""}} {{priceFlag?"down-show":""}}' data-item='{{item}}' data-index='{{index}}' bindtap='priceChoice'>
+        <text>{{item}}</text>
+        <text class='iconfont icon-dagou rfloat' wx:if='{{priceDown.price==index?true:false}}'></text>
+      </view>
+    </view>
+  </view>
+
+
+
+  <view wx:for="{{filterRoom}}" wx:key="id" class="msg">
+    <image src="{{item.img}}" class="lfloat"></image>
+    <view class="lfloat">
+      <view class="top">
+        <text>{{item.num1 + "号"}}</text>
+        <text>{{item.num2 + "\n"}}</text>
+      </view>
+      <view class="middle">
+        <text>{{item.size + "平方"}}</text>
+        <text>{{item.price + "/月"}}</text>
+        <text>{{item.type}}</text>
+      </view>
+      <view class="bottom">
+        <text>备注：</text>
+      </view>
+    </view>
+    
+    <button class="rfloat">联系房东</button>
+  </view>
+</view>
